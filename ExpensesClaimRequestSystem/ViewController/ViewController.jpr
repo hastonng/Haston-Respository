@@ -3,6 +3,7 @@
    <hash n="component-versions">
       <value n="oracle.adfdt.controller.adfc.source.migration.AdfControllerSchemaMigrator" v="11.1.1.1.0"/>
       <value n="oracle.adfdt.controller.common.migrator.ProjectMigrator" v="11.1.1.1.0"/>
+      <value n="oracle.adfdt.controller.jsf2.diagram.migrate.JsfNodeMigratorHelper" v="11.1.1.1.0"/>
       <value n="oracle.adfdt.controller.migrate.TrinidadDatabindingsProjectMigrator" v="11.1.2.0.0"/>
       <value n="oracle.adfdtinternal.dvt.datapresdt.migration.DVTDataMapMigrator" v="11.1.1.1.0.3"/>
       <value n="oracle.adfdtinternal.model.ide.migration.ProjectMigrator" v="11.1.1.1.0.11.1.1"/>
@@ -55,7 +56,7 @@
       <list n="dependencyList">
          <hash>
             <hash n="dependable">
-               <url n="sourceOwnerURL" path="../AssetRequestSystem.jws"/>
+               <url n="sourceOwnerURL" path="../ExpensesClaimRequestSystem.jws"/>
                <url n="sourceURL" path="../Model/Model.jpr"/>
             </hash>
             <value n="recognizerId" v="oracle.jdeveloper.library"/>
@@ -66,7 +67,6 @@
       <list n="technologyScope">
          <string v="ADF_FACES"/>
          <string v="ADFc"/>
-         <string v="ADFm"/>
          <string v="HTML"/>
          <string v="JAVASCRIPT"/>
          <string v="JSF"/>
@@ -93,7 +93,7 @@
    </hash>
    <hash n="oracle.jdeveloper.deploy.dt.DeploymentProfiles">
       <hash n="profileDefinitions">
-         <hash n="AssetRequestSystem_Project1_webapp">
+         <hash n="ExpensesClaimRequestSystem_Project1_webapp">
             <hash n="appletArchives"/>
             <hash n="appletFiles">
                <value n="autoInclude" v="true"/>
@@ -104,7 +104,7 @@
             <hash n="archiveOptions">
                <value n="hasManifest" v="false"/>
             </hash>
-            <value n="enterpriseAppName" v="AssetRequestSystem_Project1_webapp"/>
+            <value n="enterpriseAppName" v="ExpensesClaimRequestSystem_Project1_webapp"/>
             <hash n="fileGroups">
                <list n="groups">
                   <hash>
@@ -160,34 +160,39 @@
                   </hash>
                </list>
             </hash>
-            <url n="jarURL" path="deploy/AssetRequestSystem_Project1_webapp.war"/>
+            <url n="jarURL" path="deploy/ExpensesClaimRequestSystem_Project1_webapp.war"/>
             <hash n="libraryDependencies">
                <value n="IncludeLibrariesFromOtherContainers" v="true"/>
             </hash>
             <value n="profileClass" v="oracle.jdeveloper.deploy.war.WarProfile"/>
-            <value n="profileName" v="AssetRequestSystem_Project1_webapp"/>
+            <value n="profileName" v="ExpensesClaimRequestSystem_Project1_webapp"/>
          </hash>
       </hash>
       <list n="profileList">
-         <string v="AssetRequestSystem_Project1_webapp"/>
+         <string v="ExpensesClaimRequestSystem_Project1_webapp"/>
       </list>
    </hash>
    <hash n="oracle.jdeveloper.model.J2eeSettings">
-      <value n="j2eeWebAppName" v="AssetRequestSystem-ViewController-webapp"/>
-      <value n="j2eeWebContextRoot" v="AssetRequestSystem-ViewController-context-root"/>
-      <hash n="webContentSet">
+      <value n="j2eeWebAppName" v="ExpensesClaimRequestSystem-ViewController-webapp"/>
+      <value n="j2eeWebContextRoot" v="ExpensesClaimRequestSystem-ViewController-context-root"/>
+   </hash>
+   <hash n="oracle.jdeveloper.model.PathsConfiguration">
+      <hash n="javaContentSet">
          <list n="pattern-filters">
-            <string v="-Index.jsff"/>
             <string v="+**"/>
          </list>
          <list n="url-path">
-            <url path="public_html/"/>
+            <url path="src/"/>
          </list>
       </hash>
    </hash>
    <hash n="oracle.jdevimpl.config.JProjectLibraries">
       <list n="exportedReferences">
          <hash>
+            <url n="id" path="../MySQL JDBC.library"/>
+            <value n="isJDK" v="false"/>
+         </hash>
+         <hash>
             <value n="id" v="JSP Runtime"/>
             <value n="isJDK" v="false"/>
          </hash>
@@ -256,20 +261,16 @@
             <value n="isJDK" v="false"/>
          </hash>
          <hash>
-            <value n="id" v="Oracle JEWT"/>
-            <value n="isJDK" v="false"/>
-         </hash>
-         <hash>
-            <value n="id" v="ADF Faces Databinding Runtime"/>
-            <value n="isJDK" v="false"/>
-         </hash>
-         <hash>
-            <value n="id" v="ADF Model Runtime"/>
+            <value n="id" v="JPS Designtime"/>
             <value n="isJDK" v="false"/>
          </hash>
       </list>
       <list n="libraryReferences">
          <hash>
+            <url n="id" path="../MySQL JDBC.library"/>
+            <value n="isJDK" v="false"/>
+         </hash>
+         <hash>
             <value n="id" v="JSP Runtime"/>
             <value n="isJDK" v="false"/>
          </hash>
@@ -338,15 +339,7 @@
             <value n="isJDK" v="false"/>
          </hash>
          <hash>
-            <value n="id" v="Oracle JEWT"/>
-            <value n="isJDK" v="false"/>
-         </hash>
-         <hash>
-            <value n="id" v="ADF Faces Databinding Runtime"/>
-            <value n="isJDK" v="false"/>
-         </hash>
-         <hash>
-            <value n="id" v="ADF Model Runtime"/>
+            <value n="id" v="JPS Designtime"/>
             <value n="isJDK" v="false"/>
          </hash>
       </list>
@@ -456,16 +449,6 @@
             <value n="URI" v="http://xmlns.oracle.com/adf/faces/rich/component"/>
             <value n="version" v="11"/>
          </hash>
-         <hash>
-            <hash n="baseLibrary">
-               <value n="name" v="ADF Data Visualization"/>
-               <value n="version" v="11"/>
-            </hash>
-            <value n="name" v="ADF Data Visualization"/>
-            <value n="taglibURL" v="@oracle.home@../oracle_common/modules/oracle.adf.view_11.1.1/dvt-faces.jar!/META-INF/bi.taglib.xml"/>
-            <value n="URI" v="http://xmlns.oracle.com/dss/adf/faces"/>
-            <value n="version" v="11"/>
-         </hash>
       </list>
    </hash>
    <hash n="oracle.jdevimpl.webapp.jsp.libraries.model.ProjectTagLibraries">
@@ -502,17 +485,6 @@
             <value n="tldURL" v="@oracle.home@../oracle_common/modules/oracle.adf.view_11.1.1/adf-richclient-impl-11.jar!/META-INF/afu.tld"/>
             <value n="URI" v="http://xmlns.oracle.com/adf/faces/rich"/>
             <value n="version" v="11"/>
-         </hash>
-         <hash>
-            <hash n="baseLibrary">
-               <value n="name" v="ADF Data Visualization"/>
-               <value n="version" v="1.1"/>
-            </hash>
-            <value n="jspVersion" v="2.1"/>
-            <value n="name" v="ADF Data Visualization"/>
-            <value n="tldURL" v="@oracle.home@../oracle_common/modules/oracle.adf.view_11.1.1/dvt-faces.jar!/META-INF/bi.tld"/>
-            <value n="URI" v="http://xmlns.oracle.com/dss/adf/faces"/>
-            <value n="version" v="1.1"/>
          </hash>
       </list>
    </hash>
