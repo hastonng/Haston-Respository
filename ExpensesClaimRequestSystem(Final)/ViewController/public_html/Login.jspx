@@ -30,7 +30,8 @@
                     <button type="button" name="loginButton" id="loginButton">
                         Login
                     </button>
-                    <h:outputText value="outputText1" id="ot1" binding="#{backingBeanScope.LoginPage.ot1}"/>
+                    <h:outputText value="outputText1" id="resultText"
+                                  binding="#{backingBeanScope.LoginPage.resultText}"/>
                 </af:panelGroupLayout>
             </af:form>
         </af:document>
