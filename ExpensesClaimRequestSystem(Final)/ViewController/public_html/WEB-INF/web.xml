@@ -126,6 +126,37 @@
     <servlet-name>resources</servlet-name>
     <url-pattern>/bi/*</url-pattern>
   </servlet-mapping>
+  
+<servlet>
+      <servlet-name>LoginPage</servlet-name>
+      <servlet-class>view.LoginPage</servlet-class>
+</servlet>
+
+   <servlet-mapping>
+      <servlet-name>LoginPage</servlet-name>
+      <url-pattern>/displayLoginPage</url-pattern>
+   </servlet-mapping>
+   
+<servlet>
+   <servlet-name>InvalidPage</servlet-name>
+   <servlet-class>view.InvalidPage</servlet-class>
+</servlet>
+
+<servlet-mapping>
+    <servlet-name>InvalidPage</servlet-name>
+    <url-pattern>/displayInvalidPage</url-pattern>
+</servlet-mapping>
+
+<servlet>
+    <servlet-name>RequesterPage</servlet-name>
+    <servlet-class>view.RequesterPage</servlet-class>
+</servlet>
+
+<servlet-mapping>
+    <servlet-name>RequesterPage</servlet-name>
+    <url-pattern>/displayRequesterPage</url-pattern>
+</servlet-mapping>
+   
   <mime-mapping>
     <extension>swf</extension>
     <mime-type>application/x-shockwave-flash</mime-type>
