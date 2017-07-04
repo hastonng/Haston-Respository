@@ -9,32 +9,39 @@ public class DBRetrieve {
     
     private String sql;
     private Connection connection;
-    private String setTable;
-    private String getTable;
-    
+    private ResultSet result;
     
     public DBRetrieve() throws SQLException {
         super();
         this.sql="";
-        this.connection= DriverManager.getConnection("Server=haston.asuscomm.com;Port=3306;Database=ECRS_Schema;Uid=haston;Pwd=finalyear");
+        connection= DriverManager.getConnection("jdbc:mysql://haston.asuscomm.com:3306/ECRS_SCHEMA","haston","finalyear");
+    }
+    public void setResult(ResultSet res){
+        result=res;
     }
     
-    public void setConnection(String connectString) throws SQLException {
-    this.connection = DriverManager.getConnection(connectString);
-}
-    
-    public Connection getConnection() throws SQLException {
-        //this.connection = DriverManager.getConnection("Server=haston.asuscomm.com;Port=3306;Database=ECRS_Schema;Uid=haston;Pwd=finalyear");
-        return this.connection;
+    public ResultSet getResult(){
+        return result;
     }
     
-    public ResultSet Query(String sqlStatement) throws SQLException {
-        Statement stmt = this.connection.createStatement();
-        String Sql = sqlStatement;
-        ResultSet rs = stmt.executeQuery(Sql);
-        return rs;
+    public void Query(String sqlStatement) {
+        try{
+                Class.forName("com.mysql.jdbc.Driver");
+                Connection conn = DriverManager.getConnection("jdbc:mysql://haston.asuscomm.com:3306/ECRS_SCHEMA","haston","finalyear");
+                Statement stmt = conn.createStatement();
+                ResultSet rs = stmt.executeQuery(sqlStatement);
+                result=rs;
+        }
+        catch (Exception e){
+            
+        }
     }
-
-     
-      
+    
+    public void closeConn (){
+        try {
+            connection.close();
+        } catch (Exception e) {
+        }
+    }
+         
 }
