@@ -2,12 +2,27 @@
 <adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
   <managed-bean id="__1">
     <managed-bean-name>LoginPage</managed-bean-name>
-    <managed-bean-class>view.LoginPage</managed-bean-class>
+    <managed-bean-class>.view.LoginPage</managed-bean-class>
     <managed-bean-scope>backingBean</managed-bean-scope>
   </managed-bean>
   <managed-bean id="__2">
+    <managed-bean-name>RequesterPage</managed-bean-name>
+    <managed-bean-class>.view.RequesterPage</managed-bean-class>
+    <managed-bean-scope>backingBean</managed-bean-scope>
+  </managed-bean>
+  <managed-bean id="__3">
+    <managed-bean-name>InvliadPage</managed-bean-name>
+    <managed-bean-class>view.InvalidPage</managed-bean-class>
+    <managed-bean-scope>backingBean</managed-bean-scope>
+  </managed-bean>
+  <managed-bean id="__4">
     <managed-bean-name>requesterPage</managed-bean-name>
     <managed-bean-class>view.requesterPage</managed-bean-class>
+    <managed-bean-scope>backingBean</managed-bean-scope>
+  </managed-bean>
+  <managed-bean id="__5">
+    <managed-bean-name>RequestPage</managed-bean-name>
+    <managed-bean-class>view.RequestPage</managed-bean-class>
     <managed-bean-scope>backingBean</managed-bean-scope>
   </managed-bean>
 </adfc-config>
