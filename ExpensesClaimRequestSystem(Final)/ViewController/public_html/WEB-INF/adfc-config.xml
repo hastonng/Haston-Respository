@@ -5,4 +5,9 @@
     <managed-bean-class>view.LoginPage</managed-bean-class>
     <managed-bean-scope>backingBean</managed-bean-scope>
   </managed-bean>
+  <managed-bean id="__2">
+    <managed-bean-name>requesterPage</managed-bean-name>
+    <managed-bean-class>view.requesterPage</managed-bean-class>
+    <managed-bean-scope>backingBean</managed-bean-scope>
+  </managed-bean>
 </adfc-config>

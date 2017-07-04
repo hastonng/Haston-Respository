@@ -1,11 +1,13 @@
 package view;
 
+import groovy.sql.Sql;
+
 import java.io.IOException;
 
 import java.io.PrintWriter;
 
 import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
 
 import javax.faces.component.html.HtmlOutputText;
 
@@ -19,13 +21,12 @@ import oracle.adf.view.rich.component.rich.layout.RichPanelHeader;
 
 public class LoginPage extends HttpServlet
 {
-    static private RichPanelGroupLayout pgl2;
-    static private RichPanelHeader ph1;
-    static private RichPanelGroupLayout pgl1;
-    static private RichForm f1;
-    static private RichDocument d1;
-    static private HtmlOutputText resultText;
-    static private String outputStr;
+     private RichPanelGroupLayout pgl2;
+     private RichPanelHeader ph1;
+     private RichPanelGroupLayout pgl1;
+     private RichForm f1;
+     private RichDocument d1;
+    private int typeRole;
 
 
     public LoginPage() {
@@ -71,66 +72,88 @@ public class LoginPage extends HttpServlet
     public RichDocument getD1() {
         return d1;
     }
-    
-    public void setResultText(HtmlOutputText resultText) {
-        LoginPage.resultText = resultText;
-    }
-
-    public static HtmlOutputText getResultText() {
-        return resultText;
-    }
 
 
-    public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException,IOException,
-                                                                                       SQLException {
-            response.setContentType("text/html");
-            PrintWriter out = response.getWriter(); 
-            String uN = request.getParameter("username"); 
-            String pW = request.getParameter("password"); 
-            ResultSet userResult,passResult; // Declaring DBRetrieve
-            DBRetrieve userQuery,passQuery; // Query for DBRetrieve
-            int role;
-            
-            //Query Database for pass and user
-            
-            userResult = userQuery.Query("SELECT * from ECRS_USER,WHERE USER_NAME='"+uN+"';");
-            passResult = passQuery.Query("SELECT * from ECRS_USER,WHERE PASSWORD='"+pW+"';");
+    public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException {
+          try{
+              response.setContentType("text/html");
+              PrintWriter out = response.getWriter(); 
+              String uN = request.getParameter("username");
+              String pW = request.getParameter("password"); 
+              String loginId="",loginPW="";
+              int admin=1,requester=2,approver=3;
+              
+              String  Sql = "select LOGIN_ID,PASSWORD from ECRS_SCHEMA.ECRS_LOGIN where USER_ID=\'"+uN+"\'";
+
+                  
+                  
+              Class.forName("com.mysql.jdbc.Driver");
+              Connection conn = DriverManager.getConnection("jdbc:mysql://haston.asuscomm.com:3306/ECRS_SCHEMA","haston","finalyear");
+              Statement stmt = conn.createStatement();
+              ResultSet rs = stmt.executeQuery(Sql);
+              while(rs.next()) {
+                  loginId = rs.getString("LOGIN_ID");
+                  loginPW = rs.getString("PASSWORD");
+              }
+              rs.close();
+              stmt.close();
+              conn.close();
+              
+              
+              if(loginId.equals(uN)) {
+                  
+                  if(loginPW.equals(pW)) {
+                      
+                      checkUserRole(loginId);
+                      
+                      if(typeRole == admin){
                 
-            String UNResult = userResult.toString();
-            String PWResult = passResult.toString();
+                          RequestDispatcher rd = request.getRequestDispatcher("/requesterPage.jspx");
+                          out.flush();
+                          rd.forward(request,response);
+                          return;
+                      }
+                          
+                              
+                      
+                      
+                  }
+                     //wrong page
+              }
+                  
+          }
+          
+          catch(SQLException e){
             
-            if(uN == UNResult ) {
-                
-                if(pW == PWResult){
-                    
-                    role = checkUserRole(uN);
-                    
-                    switch(role){
-                    
-                    case 1: break;
-                    
-                    case 2: out.print("<a href=C://Users//Haston Ng//Documents//GitHub//Haston-Respository//ExpensesClaimRequestSystem(Final)//ViewController//public_html//ecrs-requester-main-page.jspx");
-                            break;
-                    
-                    case 3: out.print("<a href=C://Users//Haston Ng//Documents//GitHub//Haston-Respository//ExpensesClaimRequestSystem(Final)//ViewController//public_html//ecrs-approver-main-page.jspx");
-                            break;
-                        
-                    }
-                }
-                
+          }
+          catch(IOException e){
+             
+          } catch (ClassNotFoundException e) {
+          }
+
+      }
+
+    public void checkUserRole(String userName) {
+        try{
+            
+        String Sql = "select USER_ROLE from ECRS_SCHEMA.ECRS_LOGIN where USER_ID=\'"+userName+"\'";
+            
+        Class.forName("com.mysql.jdbc.Driver");
+        Connection conn = DriverManager.getConnection("jdbc:mysql://haston.asuscomm.com:3306/ECRS_SCHEMA","haston","finalyear");
+        Statement stmt = conn.createStatement();
+        ResultSet rs = stmt.executeQuery(Sql);
+            while(rs.next()){
+                typeRole =rs.getInt("USER_ROLE");
             }
-            else
-                
-                           
-    }
-    
-    public int checkUserRole(String userName) throws SQLException {
-        DBRetrieve getRole;
-        ResultSet result;
-        
-        result=getRole.Query("SELECT USER_ROLE FROM ECRS_USER, WHERE USER_NAME='"+userName+"';");
-        int roleResult = result.getInt(0);
-        
-        return roleResult;
+            
+            rs.close();
+            stmt.close();
+            conn.close();
+
+        }
+       catch (ClassNotFoundException e) {
+        } 
+        catch (SQLException e) {
+        }
     }
 }

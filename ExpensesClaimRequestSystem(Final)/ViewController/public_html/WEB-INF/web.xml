@@ -98,6 +98,27 @@
     <servlet-name>MapProxyServlet</servlet-name>
     <servlet-class>oracle.adf.view.faces.bi.webapp.MapProxyServlet</servlet-class>
   </servlet>
+  
+  <servlet>
+    <servlet-name>LoginPage</servlet-name>
+    <servlet-class>view.LoginPage</servlet-class>
+</servlet>
+
+<servlet-mapping>
+    <servlet-name>LoginPage</servlet-name>
+    <url-pattern>/displayLoginPage</url-pattern>
+</servlet-mapping>
+
+<servlet>
+    <servlet-name>requesterPage</servlet-name>
+    <servlet-class>view.requesterPage</servlet-class>
+</servlet>
+
+<servlet-mapping>
+    <servlet-name>requesterPage</servlet-name>
+    <url-pattern>/displayRequester</url-pattern>
+    </servlet-mapping>
+
   <servlet-mapping>
     <servlet-name>Faces Servlet</servlet-name>
     <url-pattern>/faces/*</url-pattern>
@@ -110,6 +131,8 @@
     <servlet-name>resources</servlet-name>
     <url-pattern>/afr/*</url-pattern>
   </servlet-mapping>
+  
+  
   <servlet-mapping>
     <servlet-name>BIGRAPHSERVLET</servlet-name>
     <url-pattern>/servlet/GraphServlet/*</url-pattern>
