@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="EcrsAttachmentViewVO"
+  Version="11.1.2.64.36"
+  BindingStyle="JDBC"
+  CustomQuery="true"
+  PageIterMode="Full"
+  UseGlueCode="false">
+  <DesignTime>
+    <Attr Name="_isExpertMode" Value="true"/>
+  </DesignTime>
+  <SQLQuery><![CDATA[SELECT EcrsSchemaEcrsAttachment.ATTACHMENT_ID,
+       EcrsSchemaEcrsAttachment.ATTACHMENT_FILE,
+       EcrsSchemaEcrsAttachment.USER_ID,
+       EcrsSchemaEcrsAttachment.REQUEST_ID
+FROM ecrs_schema.ecrs_attachment EcrsSchemaEcrsAttachment]]></SQLQuery>
+  <ViewAttribute
+    Name="AttachmentId"
+    IsUpdateable="false"
+    IsPersistent="false"
+    IsNotNull="true"
+    PrecisionRule="true"
+    Type="java.lang.Integer"
+    ColumnType="INT"
+    AliasName="ATTACHMENT_ID"
+    Expression="ATTACHMENT_ID"
+    SQLType="INTEGER">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="10"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="AttachmentFile"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="255"
+    Type="java.lang.String"
+    ColumnType="VARCHAR"
+    AliasName="ATTACHMENT_FILE"
+    Expression="ATTACHMENT_FILE"
+    SQLType="VARCHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="255"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="UserId"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="255"
+    Type="java.lang.String"
+    ColumnType="VARCHAR"
+    AliasName="USER_ID"
+    Expression="USER_ID"
+    SQLType="VARCHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="255"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="RequestId"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.lang.Integer"
+    ColumnType="INT"
+    AliasName="REQUEST_ID"
+    Expression="REQUEST_ID"
+    SQLType="INTEGER">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="10"/>
+    </DesignTime>
+  </ViewAttribute>
+  <AttrArray Name="KeyAttributes">
+    <Item Value="AttachmentId"/>
+  </AttrArray>
+  <ViewLinkAccessor
+    Name="ApproverLovViewVO"
+    ViewLink="model.ViewObject.ApproverLovIbfk1Link1"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="UserIdEcrsAttachmentViewVO"
+    ViewLink="model.ViewObject.EcrsAttachmentIbfk1Link1"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="RequestIdEcrsAttachmentViewVO"
+    ViewLink="model.ViewObject.EcrsAttachmentIbfk2Link1"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="EcrsLoginViewVO"
+    ViewLink="model.ViewObject.EcrsLoginIbfk1Link1"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="EcrsRequestViewVO"
+    ViewLink="model.ViewObject.EcrsRequestIbfk1Link1"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="RequestTypeLovViewVO"
+    ViewLink="model.ViewObject.RequestTypeLovIbfk1Link1"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+</ViewObject>

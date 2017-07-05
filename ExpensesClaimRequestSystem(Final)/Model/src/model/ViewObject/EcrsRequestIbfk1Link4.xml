@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewLink SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewLink
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="EcrsRequestIbfk1Link4"
+  Version="11.1.2.64.36">
+  <ViewLinkDefEnd
+    Name="EcrsUserViewVO"
+    Cardinality="1"
+    Source="true"
+    Owner="model.ViewObject.EcrsUserViewVO">
+    <DesignTime>
+      <Attr Name="_finderName" Value="EcrsUserViewVO"/>
+      <Attr Name="_isUpdateable" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.ViewObject.EcrsUserViewVO.UserId"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+  <ViewLinkDefEnd
+    Name="EcrsRequestViewVO"
+    Cardinality="-1"
+    Owner="model.ViewObject.EcrsRequestViewVO">
+    <DesignTime>
+      <Attr Name="_finderName" Value="EcrsRequestViewVO"/>
+      <Attr Name="_isUpdateable" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.ViewObject.EcrsRequestViewVO.UserId"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+</ViewLink>

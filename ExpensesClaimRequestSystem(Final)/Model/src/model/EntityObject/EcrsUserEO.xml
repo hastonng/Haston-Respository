@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="EcrsUserEO"
+  Version="11.1.2.64.36"
+  DBObjectType="table"
+  DBObjectName="ecrs_schema.ecrs_user"
+  AliasName="EcrsUserEO"
+  BindingStyle="JDBC"
+  UseGlueCode="false">
+  <Attribute
+    Name="UserName"
+    Precision="255"
+    ColumnName="USER_NAME"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR"
+    TableName="ecrs_schema.ecrs_user">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="255"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="UserId"
+    IsNotNull="true"
+    Precision="255"
+    ColumnName="USER_ID"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR"
+    TableName="ecrs_schema.ecrs_user"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="255"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Email"
+    Precision="255"
+    ColumnName="EMAIL"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR"
+    TableName="ecrs_schema.ecrs_user">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="255"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="UserRole"
+    ColumnName="USER_ROLE"
+    SQLType="INTEGER"
+    Type="java.lang.Integer"
+    ColumnType="INT"
+    TableName="ecrs_schema.ecrs_user">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="10"/>
+    </DesignTime>
+  </Attribute>
+  <AccessorAttribute
+    Name="ApproverLovEO"
+    Association="model.EntityObject.ApproverLovIbfk1Assoc4"
+    AssociationEnd="model.EntityObject.ApproverLovIbfk1Assoc4.ApproverLovEO"
+    AssociationOtherEnd="model.EntityObject.ApproverLovIbfk1Assoc4.EcrsUserEO"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="EcrsAttachmentEO"
+    Association="model.EntityObject.EcrsAttachmentIbfk2Assoc4"
+    AssociationEnd="model.EntityObject.EcrsAttachmentIbfk2Assoc4.EcrsAttachmentEO"
+    AssociationOtherEnd="model.EntityObject.EcrsAttachmentIbfk2Assoc4.EcrsUserEO"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="EcrsAttachmentEO1"
+    Association="model.EntityObject.EcrsAttachmentIbfk1Assoc4"
+    AssociationEnd="model.EntityObject.EcrsAttachmentIbfk1Assoc4.EcrsAttachmentEO1"
+    AssociationOtherEnd="model.EntityObject.EcrsAttachmentIbfk1Assoc4.EcrsUserEO1"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="EcrsLoginEO"
+    Association="model.EntityObject.EcrsLoginIbfk1Assoc4"
+    AssociationEnd="model.EntityObject.EcrsLoginIbfk1Assoc4.EcrsLoginEO"
+    AssociationOtherEnd="model.EntityObject.EcrsLoginIbfk1Assoc4.EcrsUserEO"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="EcrsRequestEO"
+    Association="model.EntityObject.EcrsRequestIbfk1Assoc4"
+    AssociationEnd="model.EntityObject.EcrsRequestIbfk1Assoc4.EcrsRequestEO"
+    AssociationOtherEnd="model.EntityObject.EcrsRequestIbfk1Assoc4.EcrsUserEO"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="RequestTypeLovEO"
+    Association="model.EntityObject.RequestTypeLovIbfk1Assoc3"
+    AssociationEnd="model.EntityObject.RequestTypeLovIbfk1Assoc3.RequestTypeLovEO"
+    AssociationOtherEnd="model.EntityObject.RequestTypeLovIbfk1Assoc3.EcrsUserEO"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <Key
+    Name="Primary1"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="PRIMARY"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.EntityObject.EcrsUserEO.UserId"/>
+    </AttrArray>
+  </Key>
+</Entity>

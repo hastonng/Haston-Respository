@@ -1,15 +1,25 @@
 package view;
 
+import java.io.IOException;
+import java.io.PrintWriter;
+
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
 import oracle.adf.view.rich.component.rich.RichDocument;
 import oracle.adf.view.rich.component.rich.layout.RichPanelGroupLayout;
 import oracle.adf.view.rich.component.rich.layout.RichPanelHeader;
+import oracle.adf.view.rich.component.rich.output.RichSpacer;
 
-public class RequestPage {
+public class RequestPage extends HttpServlet{
     private RichPanelGroupLayout pgl3;
     private RichPanelGroupLayout pgl2;
     private RichPanelHeader ph1;
     private RichPanelGroupLayout pgl1;
     private RichDocument d1;
+    private RichSpacer s1;
 
     public RequestPage() {
     }
@@ -52,5 +62,24 @@ public class RequestPage {
 
     public RichDocument getD1() {
         return d1;
+    }
+    public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException {
+        
+        try {
+            PrintWriter out;
+            out = response.getWriter();
+            
+            out.print("hi");
+        } catch (IOException e) {
+        }
+}
+
+
+    public void setS1(RichSpacer s1) {
+        this.s1 = s1;
+    }
+
+    public RichSpacer getS1() {
+        return s1;
     }
 }

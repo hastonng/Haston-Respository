@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE Association SYSTEM "jbo_03_01.dtd">
+<!---->
+<Association
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="EcrsRequestIbfk1Assoc2"
+  Version="11.1.2.64.36">
+  <DesignTime>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
+  <AssociationEnd
+    Name="EcrsAttachmentEO2"
+    Cardinality="1"
+    Source="true"
+    Owner="model.EntityObject.EcrsAttachmentEO">
+    <DesignTime>
+      <Attr Name="_aggregation" Value="0"/>
+      <Attr Name="_finderName" Value="EcrsAttachmentEO2"/>
+      <Attr Name="_foreignKey" Value="model.EntityObject.EcrsAttachmentEO.Primary1"/>
+      <Attr Name="_isUpdateable" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.EntityObject.EcrsAttachmentEO.AttachmentId"/>
+    </AttrArray>
+  </AssociationEnd>
+  <AssociationEnd
+    Name="EcrsRequestEO2"
+    Cardinality="-1"
+    Owner="model.EntityObject.EcrsRequestEO">
+    <DesignTime>
+      <Attr Name="_aggregation" Value="0"/>
+      <Attr Name="_finderName" Value="EcrsRequestEO2"/>
+      <Attr Name="_foreignKey" Value="model.EntityObject.EcrsRequestEO.EcrsRequestIbfk1"/>
+      <Attr Name="_isUpdateable" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.EntityObject.EcrsRequestEO.UserId"/>
+    </AttrArray>
+  </AssociationEnd>
+</Association>

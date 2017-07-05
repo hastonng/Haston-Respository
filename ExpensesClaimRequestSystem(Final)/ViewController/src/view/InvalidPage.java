@@ -6,6 +6,7 @@ import java.io.PrintWriter;
 
 import java.sql.SQLException;
 
+import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -73,5 +74,9 @@ public class InvalidPage extends HttpServlet {
 
     public RichDocument getD1() {
         return d1;
+    }
+    
+    public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException {
+      
     }
 }

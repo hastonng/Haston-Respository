@@ -149,7 +149,7 @@
 
 <servlet>
     <servlet-name>RequesterPage</servlet-name>
-    <servlet-class>view.RequesterPage</servlet-class>
+    <servlet-class>view.RequestPage</servlet-class>
 </servlet>
 
 <servlet-mapping>

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="EcrsAttachmentEOView"
+  Version="11.1.2.64.36"
+  SelectList="EcrsAttachmentEO.ATTACHMENT_ID, 
+       EcrsAttachmentEO.ATTACHMENT_FILE, 
+       EcrsAttachmentEO.USER_ID, 
+       EcrsAttachmentEO.REQUEST_ID"
+  FromList="ecrs_schema.ecrs_attachment EcrsAttachmentEO"
+  BindingStyle="JDBC"
+  CustomQuery="false"
+  PageIterMode="Full"
+  UseGlueCode="false">
+  <EntityUsage
+    Name="EcrsAttachmentEO"
+    Entity="model.EntityObject.EcrsAttachmentEO"/>
+  <ViewAttribute
+    Name="AttachmentId"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="AttachmentId"
+    EntityUsage="EcrsAttachmentEO"
+    AliasName="ATTACHMENT_ID"/>
+  <ViewAttribute
+    Name="AttachmentFile"
+    PrecisionRule="true"
+    EntityAttrName="AttachmentFile"
+    EntityUsage="EcrsAttachmentEO"
+    AliasName="ATTACHMENT_FILE"/>
+  <ViewAttribute
+    Name="UserId"
+    PrecisionRule="true"
+    EntityAttrName="UserId"
+    EntityUsage="EcrsAttachmentEO"
+    AliasName="USER_ID"/>
+  <ViewAttribute
+    Name="RequestId"
+    PrecisionRule="true"
+    EntityAttrName="RequestId"
+    EntityUsage="EcrsAttachmentEO"
+    AliasName="REQUEST_ID"/>
+  <ViewLinkAccessor
+    Name="ApproverLovEOView"
+    ViewLink="model.EntityObject.ApproverLovIbfk1Assoc1Link"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="EcrsAttachmentEOView"
+    ViewLink="model.EntityObject.EcrsAttachmentIbfk2Link"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="EcrsAttachmentEOView1"
+    ViewLink="model.EntityObject.EcrsAttachmentIbfk1Link"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="EcrsLoginEOView"
+    ViewLink="model.EntityObject.EcrsLoginIbfk1Assoc2Link"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="EcrsRequestEOView"
+    ViewLink="model.EntityObject.EcrsRequestIbfk1Assoc2Link"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="RequestTypeLovEOView"
+    ViewLink="model.EntityObject.RequestTypeLovIbfk1Assoc2Link"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+</ViewObject>

@@ -1,13 +1,30 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1">
-    <jsp:output omit-xml-declaration="true" doctype-root-element="HTML"
-                doctype-system="http://www.w3.org/TR/html4/loose.dtd"
-                doctype-public="-//W3C//DTD HTML 4.01 Transitional//EN"/>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+          xmlns:f="http://java.sun.com/jsf/core">
     <jsp:directive.page contentType="text/html;charset=UTF-8"/>
-    <html>
-        <head>
-            <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-        </head>
-        <body></body>
-    </html>
+    <f:view>
+        <af:document title="approverPage.jspx" id="d1" binding="#{backingBeanScope.approverPage.d1}">
+            <af:panelGroupLayout id="pgl1" binding="#{backingBeanScope.approverPage.pgl1}">
+                <af:panelHeader text="Expenses Claim Request System" id="ph1" inlineStyle="height:20px;"
+                                binding="#{backingBeanScope.approverPage.ph1}">
+                    <f:facet name="context"/>
+                    <f:facet name="menuBar"/>
+                    <f:facet name="toolbar"/>
+                    <f:facet name="legend"/>
+                    <f:facet name="info"/>
+                </af:panelHeader>
+            </af:panelGroupLayout>
+            <form>
+                <af:panelGroupLayout id="pgl2" layout="scroll" binding="#{backingBeanScope.approverPage.pgl2}">
+                    <af:panelGroupLayout id="pgl3" binding="#{backingBeanScope.approverPage.pgl3}">
+                        <af:commandButton text="commandButton 1" id="cb1"
+                                          binding="#{backingBeanScope.approverPage.cb1}"/>
+                        <af:commandButton text="commandButton 2" id="cb2"
+                                          binding="#{backingBeanScope.approverPage.cb2}"/>
+                    </af:panelGroupLayout>
+                </af:panelGroupLayout>
+            </form>
+        </af:document>
+    </f:view>
+    <!--oracle-jdev-comment:auto-binding-backing-bean-name:approverPage-->
 </jsp:root>

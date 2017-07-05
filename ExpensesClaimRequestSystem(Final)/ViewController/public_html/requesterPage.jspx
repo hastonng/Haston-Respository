@@ -16,13 +16,8 @@
             </af:panelGroupLayout>
             <form action="displayInvalidPage">
                 <af:panelGroupLayout id="pgl2" layout="scroll" binding="#{backingBeanScope.RequestPage.pgl2}">
-                    <af:panelGroupLayout id="pgl3" binding="#{backingBeanScope.RequestPage.pgl3}">
-                        <button type="button">
-                            Button
-                        </button>
-                        <button type="button">
-                            Button
-                        </button>
+                    <af:panelGroupLayout id="pgl3" binding="#{backingBeanScope.RequestPage.pgl3}" layout="vertical">
+                        <af:spacer width="10" height="10" id="s1" binding="#{backingBeanScope.RequestPage.s1}"/>
                     </af:panelGroupLayout>
                 </af:panelGroupLayout>
             </form>

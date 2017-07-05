@@ -54,13 +54,38 @@
       <string v="oracle.mds.internal.dt.ide.MDSADFLibVirtualNodeCSProvider/mdsLibVirtualNodeContentSet"/>
    </list>
    <value n="defaultPackage" v="model"/>
+   <value n="jbo.JpxName" v="model.Model"/>
+   <value n="JboProject" v="true"/>
    <hash n="oracle.ide.model.TechnologyScopeConfiguration">
       <list n="technologyScope">
          <string v="ADFbc"/>
          <string v="Java"/>
+         <string v="XML"/>
       </list>
    </hash>
+   <value n="oracle.jbo.SavedPreferences" v="true"/>
    <hash n="oracle.jdeveloper.compiler.OjcConfiguration">
+      <list n="copyRes">
+         <string v=".cpx"/>
+         <string v=".dcx"/>
+         <string v=".ejx"/>
+         <string v=".gif"/>
+         <string v=".ini"/>
+         <string v=".jpeg"/>
+         <string v=".jpg"/>
+         <string v=".png"/>
+         <string v=".properties"/>
+         <string v=".sva"/>
+         <string v=".tag"/>
+         <string v=".tld"/>
+         <string v=".wsdl"/>
+         <string v=".xcfg"/>
+         <string v=".xlf"/>
+         <string v=".xml"/>
+         <string v=".xsd"/>
+         <string v=".xsl"/>
+         <string v=".jpx"/>
+      </list>
       <value n="internalEncoding" v="Cp1252"/>
       <list n="Javac.commandline.optionlist">
          <string v="-g"/>
@@ -119,9 +144,189 @@
             <value n="profileClass" v="oracle.adfdt.common.deploy.impl.AdfLibraryProfile"/>
             <value n="profileName" v="ExpensesClaimRequestSystem(Final)_Project1_adflib"/>
          </hash>
+         <hash n="Model">
+            <url n="bcApplication" path="src/model/Model.jpx"/>
+            <hash n="commonProfile">
+               <hash n="archiveOptions">
+                  <value n="hasManifest" v="true"/>
+               </hash>
+               <value n="containedProfile" v="true"/>
+               <hash n="fileGroups">
+                  <list n="groups">
+                     <hash>
+                        <list n="contributors">
+                           <hash>
+                              <value n="type" v="2"/>
+                           </hash>
+                           <hash>
+                              <value n="type" v="7"/>
+                           </hash>
+                        </list>
+                        <value n="displayName" v="Project Output"/>
+                        <hash n="filters">
+                           <list n="rules">
+                              <hash>
+                                 <value n="pattern" v="model/ViewObject/common/*"/>
+                              </hash>
+                              <hash>
+                                 <value n="pattern" v="model/ViewObject/client/*"/>
+                              </hash>
+                              <hash>
+                                 <value n="pattern" v="model/Module/common/*"/>
+                              </hash>
+                              <hash>
+                                 <value n="pattern" v="model/Module/client/*"/>
+                              </hash>
+                              <hash>
+                                 <value n="pattern" v="model/EntityObject/common/*"/>
+                              </hash>
+                              <hash>
+                                 <value n="pattern" v="model/EntityObject/client/*"/>
+                              </hash>
+                              <hash>
+                                 <value n="pattern" v="model/Model.jpx"/>
+                                 <value n="type" v="1"/>
+                              </hash>
+                              <hash>
+                                 <value n="pattern" v="model/ViewObject/**"/>
+                                 <value n="type" v="1"/>
+                              </hash>
+                              <hash>
+                                 <value n="pattern" v="model/Module/**"/>
+                                 <value n="type" v="1"/>
+                              </hash>
+                              <hash>
+                                 <value n="pattern" v="model/EntityObject/**"/>
+                                 <value n="type" v="1"/>
+                              </hash>
+                              <hash>
+                                 <value n="DefaultFilters" v=""/>
+                              </hash>
+                           </list>
+                        </hash>
+                        <value n="internalName" v="project-output"/>
+                        <value n="type" v="1"/>
+                     </hash>
+                  </list>
+               </hash>
+               <url n="jarURL" path="deploy/Model_Common.jar"/>
+               <hash n="libraryDependencies">
+                  <value n="IncludeLibrariesFromOtherContainers" v="true"/>
+               </hash>
+               <value n="profileClass" v="oracle.jdeveloper.deploy.jar.ArchiveProfile"/>
+               <value n="profileName" v="Model_Common"/>
+            </hash>
+            <url n="commonProfileURL" path="Model.jpr" ref="Model_Common"/>
+            <hash n="mtProfile">
+               <value n="adflib-connectionDetails" v="true"/>
+               <value n="adflib-nonReusablesError" v="false"/>
+               <hash n="archiveOptions">
+                  <value n="hasManifest" v="true"/>
+               </hash>
+               <value n="containedProfile" v="true"/>
+               <hash n="fileGroups">
+                  <list n="groups">
+                     <hash>
+                        <list n="contributors">
+                           <hash>
+                              <value n="type" v="2"/>
+                           </hash>
+                           <hash>
+                              <value n="type" v="5"/>
+                           </hash>
+                        </list>
+                        <value n="displayName" v="Project Output"/>
+                        <hash n="filters">
+                           <list n="rules">
+                              <hash>
+                                 <value n="pattern" v="model/ViewObject/client/**"/>
+                                 <value n="type" v="1"/>
+                              </hash>
+                              <hash>
+                                 <value n="pattern" v="model/ViewObject/common/**"/>
+                                 <value n="type" v="1"/>
+                              </hash>
+                              <hash>
+                                 <value n="pattern" v="model/ViewObject/server/**"/>
+                                 <value n="type" v="1"/>
+                              </hash>
+                              <hash>
+                                 <value n="pattern" v="model/ViewObject/**"/>
+                              </hash>
+                              <hash>
+                                 <value n="pattern" v="model/Module/client/**"/>
+                                 <value n="type" v="1"/>
+                              </hash>
+                              <hash>
+                                 <value n="pattern" v="model/Module/common/**"/>
+                                 <value n="type" v="1"/>
+                              </hash>
+                              <hash>
+                                 <value n="pattern" v="model/Module/server/**"/>
+                                 <value n="type" v="1"/>
+                              </hash>
+                              <hash>
+                                 <value n="pattern" v="model/Module/**"/>
+                              </hash>
+                              <hash>
+                                 <value n="pattern" v="model/EntityObject/client/**"/>
+                                 <value n="type" v="1"/>
+                              </hash>
+                              <hash>
+                                 <value n="pattern" v="model/EntityObject/common/**"/>
+                                 <value n="type" v="1"/>
+                              </hash>
+                              <hash>
+                                 <value n="pattern" v="model/EntityObject/server/**"/>
+                                 <value n="type" v="1"/>
+                              </hash>
+                              <hash>
+                                 <value n="pattern" v="model/EntityObject/**"/>
+                              </hash>
+                              <hash>
+                                 <value n="pattern" v="WEB-INF/classes/**"/>
+                                 <value n="type" v="1"/>
+                              </hash>
+                              <hash>
+                                 <value n="DefaultFilters" v=""/>
+                              </hash>
+                           </list>
+                        </hash>
+                        <value n="internalName" v="project-output"/>
+                        <value n="type" v="1"/>
+                     </hash>
+                  </list>
+               </hash>
+               <url n="jarURL" path="deploy/Model_MiddleTier.jar"/>
+               <hash n="libraryDependencies">
+                  <value n="IncludeLibrariesFromOtherContainers" v="false"/>
+               </hash>
+               <hash n="LibraryDependencies">
+                  <list n="dependencyList">
+                     <hash>
+                        <hash n="dependable">
+                           <hash n="deployDependable">
+                              <value n="adapterClass" v="oracle.jbo.dt.jdevx.deployment.ContainedProfileDependable"/>
+                              <value n="containedProfileName" v="Model_Common"/>
+                              <url n="ownerURL" path="Model.jpr"/>
+                              <value n="profileName" v="Model"/>
+                           </hash>
+                        </hash>
+                        <value n="recognizerId" v="oracle.jdeveloper.deploy.common"/>
+                     </hash>
+                  </list>
+               </hash>
+               <value n="profileClass" v="oracle.adfdt.common.deploy.impl.AdfLibraryProfile"/>
+               <value n="profileName" v="Model_MiddleTier"/>
+            </hash>
+            <url n="mtProfileURL" path="Model.jpr" ref="Model_MiddleTier"/>
+            <value n="profileClass" v="oracle.jbo.dt.jdevx.deployment.JbdJboProfile"/>
+            <value n="profileName" v="Model"/>
+         </hash>
       </hash>
       <list n="profileList">
          <string v="ExpensesClaimRequestSystem(Final)_Project1_adflib"/>
+         <string v="Model"/>
       </list>
    </hash>
    <hash n="oracle.jdeveloper.model.J2eeSettings">
@@ -172,6 +377,10 @@
             <value n="id" v="Oracle JDBC"/>
             <value n="isJDK" v="false"/>
          </hash>
+         <hash>
+            <url n="id" path="../../../Users/Haston Ng/AppData/Roaming/JDeveloper/system11.1.2.4.39.64.36.1/o.jdeveloper/MySQL JDBC.library"/>
+            <value n="isJDK" v="false"/>
+         </hash>
       </list>
       <hash n="internalDefinitions">
          <list n="libraryDefinitions"/>
@@ -207,6 +416,10 @@
          </hash>
          <hash>
             <value n="id" v="Oracle JDBC"/>
+            <value n="isJDK" v="false"/>
+         </hash>
+         <hash>
+            <url n="id" path="../../../Users/Haston Ng/AppData/Roaming/JDeveloper/system11.1.2.4.39.64.36.1/o.jdeveloper/MySQL JDBC.library"/>
             <value n="isJDK" v="false"/>
          </hash>
       </list>

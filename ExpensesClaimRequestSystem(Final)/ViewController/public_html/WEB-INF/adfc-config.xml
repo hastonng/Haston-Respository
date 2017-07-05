@@ -25,4 +25,9 @@
     <managed-bean-class>view.RequestPage</managed-bean-class>
     <managed-bean-scope>backingBean</managed-bean-scope>
   </managed-bean>
+  <managed-bean id="__6">
+    <managed-bean-name>approverPage</managed-bean-name>
+    <managed-bean-class>view.approverPage</managed-bean-class>
+    <managed-bean-scope>backingBean</managed-bean-scope>
+  </managed-bean>
 </adfc-config>

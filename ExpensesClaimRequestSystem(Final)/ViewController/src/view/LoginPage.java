@@ -33,8 +33,6 @@ public class LoginPage extends HttpServlet
     private RichPanelGroupLayout pgl3;
     private RichPanelGroupLayout pgl1;
     private RichPanelHeader ph1;
-    private String US;
-    private String PW;
     private int typeRole;
     
 
@@ -160,13 +158,33 @@ public class LoginPage extends HttpServlet
                     }
                     
                 }
+                else{
+                    RequestDispatcher rd = request.getRequestDispatcher("/InvalidLogin.jspx");
+                    out.flush();
+                    rd.forward(request,response);
+                    return;
+                }
                    
+            }
+            else {
+                RequestDispatcher rd = request.getRequestDispatcher("/InvalidLogin.jspx");
+                out.flush();
+                rd.forward(request,response);
+                return;
             }
                 
         }
         
         catch(SQLException e){
             
+            try {
+                PrintWriter out = response.getWriter(); 
+                RequestDispatcher rd = request.getRequestDispatcher("/InvalidLogin.jspx");
+                out.flush();
+                rd.forward(request,response);
+            } catch (IOException f) {
+            }
+            return;
         }
         catch(IOException e){
            

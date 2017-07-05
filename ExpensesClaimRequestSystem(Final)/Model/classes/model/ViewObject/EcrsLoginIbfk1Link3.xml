@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewLink SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewLink
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="EcrsLoginIbfk1Link3"
+  Version="11.1.2.64.36">
+  <ViewLinkDefEnd
+    Name="EcrsRequestViewVO"
+    Cardinality="1"
+    Source="true"
+    Owner="model.ViewObject.EcrsRequestViewVO">
+    <DesignTime>
+      <Attr Name="_finderName" Value="EcrsRequestViewVO"/>
+      <Attr Name="_isUpdateable" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.ViewObject.EcrsRequestViewVO.RequestId"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+  <ViewLinkDefEnd
+    Name="EcrsLoginViewVO"
+    Cardinality="-1"
+    Owner="model.ViewObject.EcrsLoginViewVO">
+    <DesignTime>
+      <Attr Name="_finderName" Value="EcrsLoginViewVO"/>
+      <Attr Name="_isUpdateable" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.ViewObject.EcrsLoginViewVO.UserId"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+</ViewLink>

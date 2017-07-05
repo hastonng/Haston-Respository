@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewLink SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewLink
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="EcrsRequestIbfk1Assoc1Link"
+  Version="11.1.2.64.36"
+  EntityAssociation="model.EntityObject.EcrsRequestIbfk1Assoc1">
+  <ViewLinkDefEnd
+    Name="ApproverLovEOView1_1"
+    Cardinality="1"
+    Source="true"
+    Owner="model.EntityObject.ApproverLovEOView">
+    <DesignTime>
+      <Attr Name="_finderName" Value="ApproverLovEOView1"/>
+      <Attr Name="_isUpdateable" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.EntityObject.ApproverLovEOView.ApproverId"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+  <ViewLinkDefEnd
+    Name="EcrsRequestEOView"
+    Cardinality="-1"
+    Owner="model.EntityObject.EcrsRequestEOView">
+    <DesignTime>
+      <Attr Name="_finderName" Value="EcrsRequestEOView"/>
+      <Attr Name="_isUpdateable" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.EntityObject.EcrsRequestEOView.UserId"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+</ViewLink>
