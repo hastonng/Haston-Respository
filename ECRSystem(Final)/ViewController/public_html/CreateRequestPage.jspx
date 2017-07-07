@@ -1,0 +1,46 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+          xmlns:f="http://java.sun.com/jsf/core" xmlns:h="http://java.sun.com/jsf/html">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <f:view>
+        <af:document title="CreateRequestPage.jspx" id="d1">
+            <af:messages id="m1"/>
+            <af:panelGroupLayout id="pgl1">
+                <af:panelHeader text="Expenses Claim Request System" id="ph1" inlineStyle="height:30px;">
+                    <f:facet name="context"/>
+                    <f:facet name="menuBar"/>
+                    <f:facet name="toolbar"/>
+                    <f:facet name="legend"/>
+                    <f:facet name="info"/>
+                </af:panelHeader>
+            </af:panelGroupLayout>
+            
+            <af:panelGroupLayout id="pgl3" >
+                <h:form id="f2">
+                    <af:inputDate label="Label 1" id="id1"/>
+                    <af:commandButton text="Submit" id="cb1">
+                        <af:clientListener method="sayHello" type="click"/>
+                    </af:commandButton>
+                    <af:selectOneChoice label="Testing" id="soc1">
+                        <af:selectItem label="Test1 " value="1" id="si1"/>
+                        <af:selectItem label="Test2" value="2" id="si2"/>
+                    </af:selectOneChoice>
+                </h:form>
+            </af:panelGroupLayout>
+            
+            
+            
+           <af:resource type="javascript">
+            function sayHello()
+            {
+                alert("Hello, world!")
+            }
+            </af:resource>
+         
+        </af:document>
+        
+    </f:view>
+    <!--oracle-jdev-comment:auto-binding-backing-bean-name:createRequestPage-->
+    
+</jsp:root>
+        
